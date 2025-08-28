@@ -11,6 +11,27 @@ cardHearts.forEach(function (heart) {
     });
 });
 
+// copy button
+const copyButtons = document.querySelectorAll(".card button:first-child");
+let copyCounter = document.getElementById("copy-count");
+let copyCount = 0;
+
+copyButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+        const card = btn.closest(".card");
+        const serviceNumber = card.querySelector(".service-number").textContent;
+
+        navigator.clipboard.writeText(serviceNumber).then(() => {
+            alert(`Number copied: ${serviceNumber}`);
+
+            copyCount++;
+            copyCounter.textContent = copyCount;
+        }).catch(err => {
+            alert("❌ Copy failed!");
+            console.error("Failed to copy: ", err);
+        });
+    });
+});
 
 // call btn alert and coin count
 const callButtons = document.querySelectorAll(".call-btn");
