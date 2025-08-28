@@ -24,12 +24,13 @@
         <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-[20px]">
             <div class="flex gap-3 md:gap-[20px] justify-center">
                 <button
-                    class="w-[100px] md:w-[123px] h-[52px] rounded-full bg-[#41ff6b1a] flex items-center justify-center gap-[10px]">
+                    class="w-[100px] md:w-[123px] h-[52px] rounded-full bg-[#41ff6b1a] flex items-center justify-center gap-[10px] font-bold">
                     <span id="count">0</span>
                     <span id="top-heart"><img class="w-[30px] h-[30px]" src="./assets/heart.png" alt=""></span></button>
                 <button
-                    class="w-[100px] md:w-[123px] h-[52px] rounded-full bg-[#41ff6b1a] flex items-center justify-center gap-[10px]">
-                    100<img class="w-[24px] h-[24px]" src="./assets/coin.png" alt="">
+                    class="coin-box w-[100px] md:w-[123px] h-[52px] rounded-full bg-[#41ff6b1a] flex items-center justify-center gap-[10px] font-bold">
+                    <span id="coin-count">100</span>
+                    <img class="w-[24px] h-[24px]" src="./assets/coin.png" alt="">
                 </button>
             </div>
             <div class="flex justify-center">
@@ -253,59 +254,22 @@
                     <i class="fa-solid fa-clock text-gray-500"></i>
                     <h2 class="text-lg font-semibold">Call History</h2>
                 </div>
-                <button class="bg-green-600 text-white text-sm px-6 py-2 rounded-full hover:bg-green-700">
+                <button id="clear-history"
+                    class="bg-green-600 text-white text-sm px-6 py-2 rounded-full hover:bg-green-700">
                     Clear
                 </button>
             </div>
-            <div class="space-y-3">
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
-                    <div>
-                        <p class="font-medium">Fire Service Number</p>
-                        <p class="text-sm text-gray-500">999</p>
-                    </div>
-                    <span class="text-sm text-gray-400">11:36:58 AM</span>
-                </div>
+            <div id="history-list" class="space-y-3"></div>
 
+            <template id="history-template">
                 <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
                     <div>
-                        <p class="font-medium">National Emergency <br> Number</p>
-                        <p class="text-sm text-gray-500">1994-999999</p>
+                        <p class="font-medium service-name"></p>
+                        <p class="text-sm text-gray-500 service-number"></p>
                     </div>
-                    <span class="text-sm text-gray-400">11:36:58 AM</span>
+                    <span class="text-sm text-gray-400 service-time"></span>
                 </div>
-
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
-                    <div>
-                        <p class="font-medium">Fire Service Number</p>
-                        <p class="text-sm text-gray-500">999</p>
-                    </div>
-                    <span class="text-sm text-gray-400">11:36:58 AM</span>
-                </div>
-
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
-                    <div>
-                        <p class="font-medium">Bangladesh Railway <br>Helpline</p>
-                        <p class="text-sm text-gray-500">999</p>
-                    </div>
-                    <span class="text-sm text-gray-400">11:36:58 AM</span>
-                </div>
-
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
-                    <div>
-                        <p class="font-medium">Fire Service Number</p>
-                        <p class="text-sm text-gray-500">999</p>
-                    </div>
-                    <span class="text-sm text-gray-400">11:36:58 AM</span>
-                </div>
-
-                <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg">
-                    <div>
-                        <p class="font-medium">Anti-Corruption Helpline</p>
-                        <p class="text-sm text-gray-500">999</p>
-                    </div>
-                    <span class="text-sm text-gray-400">11:36:58 AM</span>
-                </div>
-            </div>
+            </template>
         </div>
     </main>
 
