@@ -25,7 +25,7 @@ copyButtons.forEach(function (btn) {
             alert(`Number copied: ${serviceNumber}`);
 
             copyCount++;
-            copyCounter.textContent = copyCount;
+            copyCounter.textContent = `${copyCount} Copy`;
         }).catch(err => {
             alert("❌ Copy failed!");
             console.error("Failed to copy: ", err);
